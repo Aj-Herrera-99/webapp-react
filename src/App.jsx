@@ -3,6 +3,7 @@ import DefaultLayout from "./pages/DefaultLayout";
 import Home from "./pages/Home";
 import MovieDetail from "./pages/MovieDetail";
 import NotFound from "./pages/NotFound";
+import "./App.css"
 
 function App() {
     return (
