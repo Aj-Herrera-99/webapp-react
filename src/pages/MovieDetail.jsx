@@ -41,7 +41,7 @@ function MovieDetail() {
                     movie.reviews.map((rev) => (
                         <div className="relative p-4 mx-4 my-1 text-base bg-blue-300 bg-opacity-50 rounded-md">
                             <p>{rev.text}</p>
-                            <span className="absolute bottom-0 right-3">author: {rev.name}</span>
+                            <span className="absolute bottom-0 text-xs right-3">author: {rev.name}</span>
                         </div>
                     ))}
             </section>

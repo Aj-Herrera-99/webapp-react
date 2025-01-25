@@ -6,7 +6,7 @@ function DefaultLayout() {
     return (
         <>
             <HeaderComp />
-            <main className=" grow px-2 py-4 md:px-[5vw] ">
+            <main className=" grow p-4 md:px-[10vw] ">
                 <Outlet />
             </main>
         </>
