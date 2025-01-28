@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Children, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { movies_url } from "../globals/api";
 import MovieCard from "../components/MovieCard";
 
@@ -19,6 +19,7 @@ function Home() {
     console.log(movies);
 
     if (isLoading) return <div>Loading...</div>;
+    
     return (
         <section>
             <h1 className="text-5xl font-semibold text-blue-500 capitalize">

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { movies_url } from "../globals/api";
+import Rating from "../components/Rating";
 
 function MovieDetail() {
     const { id } = useParams();
@@ -18,7 +19,9 @@ function MovieDetail() {
     }, []);
 
     console.log(movie.reviews);
+    
     if (isLoading) return <div>Loading...</div>;
+    
     return (
         <>
             <h1 className="text-5xl font-semibold text-blue-500 capitalize">
@@ -39,8 +42,11 @@ function MovieDetail() {
                 <h2 className="text-lg">Reviews:</h2>
                 {movie.reviews &&
                     movie.reviews.map((rev) => (
-                        <div className="relative p-4 mx-4 my-1 text-base bg-blue-300 bg-opacity-50 rounded-md">
+                        <div className="relative flex items-center justify-between p-4 mx-4 my-1 text-base bg-blue-300 bg-opacity-50 rounded-md">
                             <p>{rev.text}</p>
+                            <div className="flex gap-1 text-yellow-500">
+                                <Rating stars={rev.vote}/>
+                            </div>
                             <span className="absolute bottom-0 text-xs right-3">author: {rev.name}</span>
                         </div>
                     ))}
