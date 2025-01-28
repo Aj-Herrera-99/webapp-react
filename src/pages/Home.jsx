@@ -11,15 +11,16 @@ function Home() {
         setIsLoading(true);
         axios
             .get(movies_url)
-            .then((res) => setMovies(res.data))
+            .then((res) => {
+                console.log(res.data);
+                setMovies(res.data);
+            })
             .catch((err) => console.error(err))
             .finally(() => setIsLoading(false));
     }, []);
 
-    console.log(movies);
-
     if (isLoading) return <div>Loading...</div>;
-    
+
     return (
         <section>
             <h1 className="text-5xl font-semibold text-blue-500 capitalize">
